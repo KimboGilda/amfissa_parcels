@@ -10,8 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 0) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_19_181625) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "parcels", force: :cascade do |t|
+    t.text "name"
+    t.text "kaek"
+    t.float "area"
+    t.float "coordinates_2100", default: [], array: true
+    t.float "coordinates_4326", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

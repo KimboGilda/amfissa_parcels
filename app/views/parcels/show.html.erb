@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Parcel Details</h2>
+  
+  <!-- Display Parcel Name -->
+  <p><strong>Name:</strong> <%= @parcel.name %></p>
+  
+  <!-- Display KAEK -->
+  <p><strong>KAEK:</strong> <%= @parcel.kaek %></p>
+
+  <!-- Display Area -->
+  <p><strong>Area:</strong> <%= @parcel.area %> m²</p>
+
+  <!-- Coordinates Table -->
+  <h4>Coordinates in EPSG:2100 and EPSG:4326</h4>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Coordinates 2100 (X, Y)</th>
+        <th>Coordinates 4326 (Longitude, Latitude)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @parcel.coordinates_2100.each_with_index do |coord_2100, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= coord_2100.join(", ") %></td>
+          <td>
+            <% if @parcel.coordinates_4326[index].present? %>
+              <%= @parcel.coordinates_4326[index].join(", ") %>
+            <% else %>
+              N/A <!-- Or you can use some other placeholder -->
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
