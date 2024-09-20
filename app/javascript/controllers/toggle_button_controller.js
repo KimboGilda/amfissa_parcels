@@ -11,5 +11,12 @@ export default class extends Controller {
       "Initial opacity:",
       window.getComputedStyle(this.coordinatesTarget).opacity
     );
+    if (window.getComputedStyle(this.coordinatesTarget).opacity === "0") {
+      this.coordinatesTarget.style.opacity = "1";
+      this.coordinatesTarget.style.pointerEvents = "auto";
+    } else {
+      this.coordinatesTarget.style.opacity = "0";
+      this.coordinatesTarget.style.pointerEvents = "none";
+    }
   }
 }
