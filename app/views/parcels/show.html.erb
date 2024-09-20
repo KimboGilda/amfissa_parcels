@@ -10,7 +10,15 @@
   <!-- Display Area -->
   <p><strong>Area:</strong> <%= @parcel.area %> m²</p>
 
+  <div class="container_coordinates" data-controller="toggle-button">
+  <button
+  class="btn-coordinates mt-2 mb-4"
+  data-action="click->toggle-button#toggle">
+  Check the coordinates :)
+  </button>
   <!-- Coordinates Table -->
+  <div class="coordinates"
+  data-toggle-button-target="coordinates">
   <h4>Coordinates in EPSG:2100 and EPSG:4326</h4>
   <table class="table table-bordered">
     <thead>
@@ -36,4 +44,9 @@
       <% end %>
     </tbody>
   </table>
+  </div>
+  
+  
+  
+  </div>
 </div>
