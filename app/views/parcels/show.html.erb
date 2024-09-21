@@ -1,4 +1,5 @@
 <div class="container">
+<div class="general-info">
   <h2>Parcel Details</h2>
   
   <!-- Display Parcel Name -->
@@ -9,8 +10,14 @@
 
   <!-- Display Area -->
   <p><strong>Area:</strong> <%= @parcel.area %> m²</p>
-
-  <div class="container_coordinates" data-controller="toggle-button">
+</div>
+<div class="map-container">
+  <div style="width: 100%; height: 100%;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
+<div class="container_coordinates" data-controller="toggle-button">
   <button
   class="btn-coordinates mt-2 mb-4"
   data-action="click->toggle-button#toggle">
@@ -45,8 +52,5 @@
     </tbody>
   </table>
   </div>
-  
-  
-  
-  </div>
+</div>
 </div>
