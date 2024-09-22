@@ -1,1 +1,54 @@
-// Specific CSS for your home-page
+// General Styling
+body {
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/lined-paper.png");
+  background-size: 100px 100px;
+  background-repeat: repeat;
+  font-family: "Arial", sans-serif;
+}
+
+// Header styling
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4a7c59;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.header p {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+// Banner styling
+.banner {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.banner img {
+  max-width: 100%;
+  max-height: 50vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-light {
+  border: 1px solid black;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .banner {
+    height: 200px;
+  }
+}

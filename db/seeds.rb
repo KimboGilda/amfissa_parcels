@@ -3,7 +3,7 @@ Parcel.destroy_all
 aggelospilia = Parcel.create!(
   name: "Aggelospilia",
   kaek: "480091616091",
-  area: 0,
+  area: 1032,
   coordinates_2100: [
     [360374.27, 4266863.64],
     [360383.18, 4266854.7],
@@ -44,7 +44,7 @@ aggelospilia = Parcel.create!(
 agioi_apostoloi = Parcel.create!(
     name: "Agioi Apostoloi",
     kaek: "480091135035",
-    area: 0,
+    area: 1987,
     coordinates_2100: [
       [358965.156, 4264545.235],
       [358941.517, 4264524.95],
@@ -82,7 +82,7 @@ agioi_apostoloi = Parcel.create!(
   kapraleika = Parcel.create!(
     name: "Kapraleika",
     kaek: "480770810025",
-    area: 0,
+    area: 1063,
     coordinates_2100: [
       [361522.927, 4261418.547],
       [361514.359, 4261412.145],
@@ -116,7 +116,7 @@ agioi_apostoloi = Parcel.create!(
   koumpouloi = Parcel.create!(
     name: "Koumpouloi",
     kaek: "480090905058", 
-    area: 0,
+    area: 792,
     coordinates_2100: [
       [360532.51, 4265014.68],
       [360531.33, 4264989.52],
@@ -156,7 +156,7 @@ agioi_apostoloi = Parcel.create!(
   nisi = Parcel.create!(
     name: "Nisi",
     kaek: "480091616156", 
-    area: 0, 
+    area: 862, 
     coordinates_2100: [
       [360495.789, 4265769.067],
       [360498.36, 4265761.34],
@@ -188,7 +188,7 @@ agioi_apostoloi = Parcel.create!(
   tzitzi = Parcel.create!(
     name: "Tzitzi",
     kaek: "480091143071", 
-    area: 0, 
+    area: 1700, 
     coordinates_2100: [
       [359437.49, 4263925.76],
       [359451.88, 4263911.47],
@@ -218,8 +218,3 @@ agioi_apostoloi = Parcel.create!(
       [22.389437897824834, 38.515238624265095]
     ]
   )
-  
-  
-  
-  
-  
