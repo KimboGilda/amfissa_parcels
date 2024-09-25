@@ -3,8 +3,8 @@ class ParcelsController < ApplicationController
     @parcels = Parcel.all
   end
 
-
   def show
-    @parcel = Parcel.find(params[:id])
+    @parcel = Parcel.find(params[:id])  
   end
+
 end
