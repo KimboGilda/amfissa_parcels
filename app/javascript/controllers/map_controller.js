@@ -15,7 +15,8 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10",
+      style: "mapbox://styles/mapbox/satellite-v9",
+      // mapbox://styles/mapbox/streets-v10
       center: [22.37773844634055, 38.52764920118068],
       zoom: 14
     });
@@ -50,8 +51,8 @@ export default class extends Controller {
         source: "polygon", // Reference the source you created
         layout: {},
         paint: {
-          "fill-color": "#00712D", // Fill color
-          "fill-opacity": 0.5
+          "fill-color": "#FCDE70", // Fill color
+          "fill-opacity": 0.6
         }
       });
 
