@@ -1,0 +1,11 @@
+<div class="container m-5">
+    <h2>Add a new parcel Aggelw!!</h2>
+    <%= simple_form_for @parcel do |f|%>
+      <%= f.input :name, label: 'Parcel name' %>
+      <%= f.input :kaek, label: 'KAEK'%>
+      <%= f.input :area, label: 'Area (m²)'%>
+
+      <%= f.button :submit, 'Create Parcel', class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', parcels_path, class: 'btn btn-secondary' %>
+      <% end %>
+</div>
