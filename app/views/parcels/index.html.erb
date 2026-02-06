@@ -5,9 +5,6 @@
       <h1>Αγγέλω ?? Πού είναι τα κτήματά σου ??</h1>
       <span class="badge bg-secondary"><%= @parcels.count %> Parcels</span>
     </div>
-    <%= link_to new_parcel_path, class: 'btn btn-primary' do %>
-      <i class="fa-solid fa-plus"></i> Add New Parcel
-    <% end %>
   </div>
 
   <% if @parcels.empty? %>
