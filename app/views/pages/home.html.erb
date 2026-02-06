@@ -1,13 +1,43 @@
-<div class="container-all ">
-  <div class="header m-5">
-    <h2 class="ms-3">Καλώς ήρθες Αγγέλω! Ευκαιρία να τσεκάρεις τα κτήματά σου 🫒</h2>
+<div class="container-fluid p-0">
+  <!-- Hero Section -->
+  <div class="hero-section position-relative">
+    <img src="https://oliveum.gr/wp-content/uploads/2020/08/%CE%97-%CF%80%CE%B5%CF%81%CE%B9%CE%BF%CF%87%CE%AE-slide-image.jpg" 
+         alt="Olive Grove" 
+         class="img-fluid w-100" 
+         style="max-height: 500px; object-fit: cover;" />
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" 
+         style="background: rgba(0, 0, 0, 0.4);">
+      <div class="text-center text-white">
+        <h1 class="display-4 fw-bold mb-3">Καλώς ήρθες Αγγέλω!</h1>
+        <p class="lead mb-4">Ευκαιρία να τσεκάρεις τα κτήματά σου 🫒</p>
+        <%= link_to parcels_path, class: 'btn btn-light btn-lg' do %>
+          Τσέκαρε Αγγέλω!
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <div class="banner">
-    <img src="https://oliveum.gr/wp-content/uploads/2020/08/%CE%97-%CF%80%CE%B5%CF%81%CE%B9%CE%BF%CF%87%CE%AE-slide-image.jpg" alt="Olive Grove" class="img-fluid" />
-  </div>
-
-  <div class="button-parcels mt-3 text-center">
-    <%= link_to '🌳🌳 🫒🫒', parcels_path, class: 'btn btn-outline-dark'%>
+  <!-- Quick Stats Section -->
+  <div class="container mt-5 mb-5">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <i class="fa-solid fa-map-location-dot fa-3x text-primary mb-3"></i>
+            <h3 class="card-title"><%= Parcel.count %></h3>
+            <p class="card-text text-muted">Total Parcels</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <i class="fa-solid fa-ruler-combined fa-3x text-success mb-3"></i>
+            <h3 class="card-title"><%= Parcel.sum(:area).round(2) %> m²</h3>
+            <p class="card-text text-muted">Total Area</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

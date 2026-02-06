@@ -1,21 +1,60 @@
-<div class="header m-5">
-  <h1 class="ms-3">Αγγέλω ?? Πού είναι τα κτήματά σου ??</h1>
-</div>
-<div class="container m-5">
-  <div class="row">
-    <% @parcels.each do |parcel| %>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">
-              <strong>Name: </strong>
-              <%= link_to parcel.name, parcel_path(parcel)%>
-            </h4>
-            <p class="card-text"><strong>KAEK: </strong><%= parcel.kaek %></p>
-          </div>
-        </div>
-      </div>
+<div class="container mt-4">
+  <!-- Header Section -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h1>Αγγέλω ?? Πού είναι τα κτήματά σου ??</h1>
+      <span class="badge bg-secondary"><%= @parcels.count %> Parcels</span>
+    </div>
+    <%= link_to new_parcel_path, class: 'btn btn-primary' do %>
+      <i class="fa-solid fa-plus"></i> Add New Parcel
     <% end %>
   </div>
-  <%= link_to 'Add New Parcel', new_parcel_path, class: 'btn btn-primary' %>
+
+  <% if @parcels.empty? %>
+    <!-- Empty State -->
+    <div class="row">
+      <div class="col-12">
+        <div class="alert alert-info text-center" role="alert">
+          <i class="fa-solid fa-info-circle fa-2x mb-3"></i>
+          <h4>No parcels yet</h4>
+          <p>Start by adding your first parcel!</p>
+          <%= link_to new_parcel_path, class: 'btn btn-primary mt-2' do %>
+            <i class="fa-solid fa-plus"></i> Add First Parcel
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <!-- Parcels Grid -->
+    <div class="row">
+      <% @parcels.each do |parcel| %>
+        <div class="col-md-4 col-lg-3 mb-4">
+          <%= link_to parcel_path(parcel), class: 'text-decoration-none' do %>
+            <div class="card h-100 shadow-sm hover-card">
+              <div class="card-body">
+                <h5 class="card-title text-primary mb-3">
+                  <%= parcel.name %>
+                </h5>
+                <div class="card-text">
+                  <p class="mb-2">
+                    <i class="fa-solid fa-tag text-muted"></i>
+                    <strong>KAEK:</strong> <%= parcel.kaek %>
+                  </p>
+                  <p class="mb-0">
+                    <i class="fa-solid fa-ruler-combined text-muted"></i>
+                    <strong>Area:</strong> <%= parcel.area %> m²
+                  </p>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-top-0">
+                <small class="text-muted">
+                  <i class="fa-solid fa-arrow-right"></i> View Details
+                </small>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

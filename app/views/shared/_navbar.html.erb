@@ -1,29 +1,60 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-  <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://png.pngtree.com/png-clipart/20191120/original/pngtree-olive-icon-vector-illustration-png-image_5049475.jpg" %>
+<nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm">
+  <div class="container-fluid px-4">
+    <!-- Logo/Brand -->
+    <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+      <%= image_tag "https://png.pngtree.com/png-clipart/20191120/original/pngtree-olive-icon-vector-illustration-png-image_5049475.jpg", 
+                    style: "width: 40px; height: 40px; object-fit: contain;" %>
+      <span class="ms-2 fw-bold">Κτήματα Αγγέλως</span>
     <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Navigation Items -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <%= link_to parcels_path, class: 'nav-link me-3' do %>
-              <i class="fa fa-house"></i>
-            <% end %>
-          </li>
-          
-          <li class="nav-item dropdown">
-            <%= image_tag 'logo_aggelw.png', class: 'avatar dropdown-toggle', id: 'navbarDropdown', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' } %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
-          </li>
+      <ul class="navbar-nav ms-auto align-items-center">
+        <!-- Home Link -->
+        <li class="nav-item">
+          <%= link_to root_path, class: 'nav-link me-3' do %>
+            <i class="fa-solid fa-home"></i>
+          <% end %>
+        </li>
+
+        <!-- Parcels Link -->
+        <li class="nav-item">
+          <%= link_to parcels_path, class: 'nav-link me-3' do %>
+            <i class="fa-solid fa-map"></i>
+          <% end %>
+        </li>
+
+        <!-- Add Parcel Button -->
+        <li class="nav-item me-3">
+          <%= link_to new_parcel_path, class: 'btn btn-primary btn-sm' do %>
+            <i class="fa-solid fa-plus"></i> Νέο κτήμα
+          <% end %>
+        </li>
+        
+        <!-- User Dropdown -->
+        <li class="nav-item dropdown">
+          <%= image_tag 'logo_aggelw.png', class: 'avatar dropdown-toggle', 
+                        id: 'navbarDropdown', 
+                        style: 'width: 40px; height: 40px; border-radius: 50%; cursor: pointer;',
+                        data: { bs_toggle: 'dropdown' }, 
+                        aria: { haspopup: 'true', expanded: 'false' } %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <h6 class="dropdown-header">Αγγέλω</h6>
+            <a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i> Profile</a>
+            <a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-danger" data-turbo-method="delete" href="#">
+              <i class="fa-solid fa-right-from-bracket"></i> Log out
+            </a>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
-</div>
+</nav>
